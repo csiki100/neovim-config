@@ -21,8 +21,19 @@ return {
                 vim.keymap.set("n", "<leader>qc", function() vim.lsp.buf.code_action() end, opts)
                 vim.keymap.set("n", "<leader>qe", function() vim.lsp.buf.references() end, opts)
                 vim.keymap.set("n", "<leader>qr", function() vim.lsp.buf.rename() end, opts)
-                vim.keymap.set("n", "<leader>qf", function() vim.lsp.buf.format() end, opts)
                 vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
+                vim.keymap.set("n", "<leader>qf", function()
+                    local client = vim.lsp.get_active_clients({ bufnr = 0 })[1]
+
+                    -- if lsp can format code use lsp format
+                    -- else use python (black) format command for now
+                    if client and client.supports_method("textDocument/formatting") then
+                        vim.lsp.buf.format()
+                    else
+                        vim.cmd("Format")
+                    end
+                end, opts)
             end
         })
 
