@@ -5,13 +5,13 @@ return {
     config = function()
         local configs = require("catppuccin")
         configs.setup({
-            dim_inactive = {
-                enabled = true
-            },
             integrations={
                 harpoon=true
             },
-            transparent_background=true
+            transparent_background=true,
+            -- dim_inactive = {
+            --     enabled = true,
+            -- },
 
         })
         vim.cmd.colorscheme "catppuccin"

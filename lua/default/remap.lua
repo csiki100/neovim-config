@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 vim.keymap.set("n", "<leader>ep", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>te", ":below split| resize 20 | terminal<CR>")
+vim.keymap.set("n", "<leader>te", ":below split | resize 15 | terminal<CR>")
 vim.keymap.set("n", "<leader>tr", ":resize 20<CR>")
 
 vim.keymap.set("n", "H", "<C-W>h")
