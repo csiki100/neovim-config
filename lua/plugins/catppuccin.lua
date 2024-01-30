@@ -7,7 +7,12 @@ return {
         configs.setup({
             dim_inactive = {
                 enabled = true
-            }
+            },
+            integrations={
+                harpoon=true
+            },
+            transparent_background=true
+
         })
         vim.cmd.colorscheme "catppuccin"
     end

@@ -1,0 +1,1 @@
+- show python venv on status line (venv select has a lua function that shows it)
