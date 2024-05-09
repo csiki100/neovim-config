@@ -12,8 +12,6 @@ return {
         local telescopeBuiltin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>pf', telescopeBuiltin.find_files, {})
         vim.keymap.set('n', '<leader>gf', telescopeBuiltin.git_files, {})
-        vim.keymap.set('n', '<leader>ps', function()
-            telescopeBuiltin.grep_string({ search = vim.fn.input("Grep > ") })
-        end)
+        vim.keymap.set('n', '<leader>ps', telescopeBuiltin.live_grep,{})
     end
 }

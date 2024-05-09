@@ -18,6 +18,7 @@ require("lazy").setup("plugins")
 -- VIM DEFAULT EDITOR SETTINGS
 
 vim.opt.nu = true
+vim.opt.hidden=true -- windows dont resize when closing a window
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
